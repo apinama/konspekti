@@ -1,0 +1,6 @@
+git init		- create a repo
+
+git ignore		- echo '*.tmp' > .gitignore
+			  git add .gitignore
+			  git commit -m "gitignore file"
+

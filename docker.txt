@@ -1,0 +1,60 @@
+docker run -d --name=db redis:alpine -		Launch Redis container; process called redis-server
+ps aux | grep redis-server -			View all the processes running, including those started by Docker
+docker top db -					Identify information about the process including the PID (Process ID) 
+							and PPID (Parent Process ID)
+pstree -c -p -A $(pgrep dockerd) -		List all of the sub processes; the Docker process tree
+ls /proc -					The configuration for each process
+DBPID=$(pgrep redis-server) -			List all the contents of /proc, and store the Redis PID for future use.
+echo Redis is $DBPID
+ls /proc
+
+ls /proc/$DBPID -				Each process has it's own configuration and security settings defined within different files
+
+
+The concept of namespaces is to limit what processes can see and access certain parts of the system, such as other network interfaces or processes.
+
+
+ls -lha /proc/$DBPID/ns/ -			List all namespaces
+nsenter --help -				Attach processes to existing Namespaces; useful for debugging purposes
+nsenter --target $DBPID --mount --uts --ipc --net --pid ps aux -		same
+
+docker images -					List of downloaded images
+docker search loodse -				Search the desired image
+docker pull loodse/demo-www -			Pull the image to the local system to create containers of it
+
+docker run -d loodse/demo-www - 		Create a container out of the image
+docker ps -					List of running containers
+
+docker inspect <CONTAINER ID>			Get details of running container 
+
+docker ps -a					See all containers
+
+docker run -t -p 8080:80 loodse/demo-www	Start a webserver
+
+docker stop --time 5 <yourContainerId>		Stop container
+docker restart <yourContainerId>		Restart container
+
+
+docker run -d -t -p 801:80 loodse/demo-www	Start a container in detached mode
+docker run -it --name counter loodse/counter	Create and run a new container with name counter from image loodse/counter
+
+docker pull debian 				Pull debian image to the local system
+docker history debian				Shows the list of layers that debian image  contains
+docker inspect debian				More Information about an image
+docker inspect debian | 			See how the image is build and e.g. which command will executed at the container startup
+grep Cmd --after-context=10			
+
+docker inspect debian | 			See what user
+grep User --before-context=5	
+
+docker inspect debian | grep Id			Show the sha of the image
+
+apt-get update && apt-get install apache2 -y	Install Apache into running container
+
+docker diff <yourContainerId>			Inspect changes to files and directories on a container's filesystem
+docker commit <yourContainerId>			Create a new image from changes
+docker run -it <newImageId>			Run the image 
+
+docker tag <newImageId> webserver		Tag your newly created image  
+docker run -it webserver			Run the image with a tag
+
