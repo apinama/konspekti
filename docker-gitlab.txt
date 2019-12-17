@@ -1,0 +1,5 @@
+sudo docker run --detach --hostname gitlab.joustie.nl --publish 4443:443 --publish 5005:5005 --publish 2222:22 --name gitlab --restart always --volume /srv/gitlab/config:/etc/gitla
+b --volume /srv/gitlab/logs:/var/log/gitlab --volume /srv/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce
+:latest
+
+https://gitlab.com

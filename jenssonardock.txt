@@ -1,0 +1,12 @@
+#2
+
+ docker ps
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS       PORTS                                              NAMES
+c9ca021878a9        jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   40 seconds ago      Up 36 seconds       0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   tutorial_jenkins_1
+11745a0a95ee        postgres              "docker-entrypoint.s…"   40 seconds ago      Up 36 seconds       5432/tcp                                           tutorial_db_1
+
+#1
+CONTAINER ID        IMAGE                           COMMAND                  CREATED              STATUS              PORTS                                              NAMES
+b333c2f4df32        atailor22/jenkins-with-docker   "/sbin/tini -- /usr/…"   About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   tutorial_jenkins_1
+7e530040dc6e        postgres:9.6                    "docker-entrypoint.s…"   About a minute ago   Up About a minute   5432/tcp                                           tutorial_postgres_1
+11745a0a95ee        postgres                        "docker-entrypoint.s…"   7 minutes ago        Up 7 minutes        5432/tcp                                           tutorial_db_1
