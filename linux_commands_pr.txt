@@ -1,0 +1,21 @@
+cd /mnt/c/Users/marta.apina
+
+info ls			-request information about a command [ls]
+man ls			-request information about a command [ls]
+mkdir			-create a directory
+touch			-create a file
+cp newFile copiedFile		-copy a file in the same directory
+cp newFile subdirectory		-copy a file to another directory
+rm newFile ; rm newF*		-remove a file
+mv				-move file
+sudo updatedb			- update database (to be able to locate files)
+locate *key*			-find a file
+grep some_text my_file		-search some text in a file
+
+read = 4 write = 2 execute = 1 permission-744 --> rwe for owner, r - for group and everyone elsse
+
+chmod 740 my_file		-change permission of the file
+
+useradd new_user		-add a new user
+su new_user			-log in as new user
+

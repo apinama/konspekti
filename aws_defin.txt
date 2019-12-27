@@ -1,0 +1,25 @@
+AWS Inventory is a tool that scans an AWS account looking for AWS resources. 
+There are constantly new services being added to AWS and existing ones are being expanded upon with new features. 
+This ecosystem allows users to piece together many different services to form a customized cloud experience.
+
+AWS Config - for tracking changes
+
+A symbolic or soft link is an actual link to the original file, whereas a hard link is a mirror copy of the original file.
+If you delete the original file, the soft link has no value, because it points to a non-existent file. 
+But in the case of hard link, it is entirely opposite. 
+-- Necessary for accessing various components of a file system in a quick way
+
+Patch Manager automates the process of patching Windows and Linux managed instances. 
+Use this feature of AWS Systems Manager to scan your instances for missing patches or scan and install missing patches. 
+You can install patches individually or to large groups of instances by using Amazon EC2 tags.
+
+AWS Systems Manager Maintenance Window lets you define a schedule to perform potentially disruptive actions on 
+your instances such as patching an operating system, updating drivers, or installing software or patches.
+
+The workflow runs in the context of the current AWS Identity and Access Management (IAM) user. 
+This means that you don't need to configure additional IAM permissions 
+as long as you have permission to run the Automation document, or playbook, 
+and any actions called by the document.
+
+
+
